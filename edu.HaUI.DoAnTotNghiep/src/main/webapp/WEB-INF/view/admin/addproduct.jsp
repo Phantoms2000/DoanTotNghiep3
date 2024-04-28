@@ -88,8 +88,8 @@
 									id="fileProductPictures" name="productPictures" type="file"
 									class="form-control-file" multiple="multiple">
 							</div>
-							<br/>
-							<a href="/admin/list-product" class="btn btn-dark active"
+							<br />
+							<a href="/admin/product" class="btn btn-dark active"
 								role="button" aria-pressed="true">Back To List</a>
 							<button type="submit" class="btn btn-primary">Save
 								Product</button>

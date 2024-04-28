@@ -39,6 +39,7 @@
 							<tr>
 								<th scope="col">Name</th>
 								<th scope="col">Description</th>
+								<th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -46,6 +47,10 @@
 								<tr>
 									<td>${c.name }</td>
 									<td>${c.description }</td>
+									<td><a class="btn btn-primary"
+										href="${base}/admin/editcategory/${c.id}" role="button">Edit</a>
+										<button class="btn btn-danger" role="button"
+											onclick="DeleteProduct()">Delete</button></td>
 								</tr>
 							</c:forEach>
 						</tbody>

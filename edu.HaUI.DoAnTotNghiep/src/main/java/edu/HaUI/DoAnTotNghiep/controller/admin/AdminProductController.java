@@ -33,6 +33,7 @@ public class AdminProductController {
 	@RequestMapping(value = { "/admin/product" }, method = RequestMethod.GET)
 	public String adminProduct(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws IOException {
+		model.addAttribute("products", productService.findAll());
 		return "admin/product";
 	}
 

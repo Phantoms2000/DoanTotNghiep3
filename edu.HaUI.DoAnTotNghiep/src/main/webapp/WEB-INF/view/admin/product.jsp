@@ -32,17 +32,16 @@
 			<main>
 				<div class="container">
 					<h1>Danh sách sản phẩm</h1>
-					<a href="/admin/addproduct" class="btn btn-dark">Thêm
-						sản phẩm</a>
+					<a href="/admin/addproduct" class="btn btn-dark">Thêm sản phẩm</a>
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
+								<th scope="col">Number</th>
 								<th scope="col">Title</th>
 								<th scope="col">Price</th>
 								<th scope="col">Category</th>
-								<th scope="col">Status</th>
 								<th scope="col">Avatar</th>
+								<th scope="col">Action</th>
 								<!-- <th scope="col">Action</th> -->
 							</tr>
 						</thead>

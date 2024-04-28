@@ -52,8 +52,7 @@ public class AdminCategoryController {
 
 	@RequestMapping(value = { "/admin/editcategory/{categoryId}" }, method = RequestMethod.GET)
 	public String adminEditCategory(final ModelMap model, final HttpServletRequest request,
-			final HttpServletResponse response, @PathVariable("categoryId") int categoryId)
-			throws IOException {
+			final HttpServletResponse response, @PathVariable("categoryId") int categoryId) throws IOException {
 		CategoryEntity categoryEdit = categoryService.getById(categoryId);
 		model.addAttribute("addcategory", categoryEdit);
 		return "admin/addcategory";
