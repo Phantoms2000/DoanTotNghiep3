@@ -1,13 +1,16 @@
 package edu.HaUI.DoAnTotNghiep.service;
 
 import java.io.File;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.HaUI.DoAnTotNghiep.dto.Constants;
+import edu.HaUI.DoAnTotNghiep.dto.Search;
 import edu.HaUI.DoAnTotNghiep.entity.ProductEntity;
 import edu.HaUI.DoAnTotNghiep.entity.ProductImageEntity;
 
@@ -78,5 +81,13 @@ public class ProductService extends BaseService<ProductEntity> implements Consta
 		}
 
 		return super.saveOrUpdate(productEntity);
+	}
+
+	public List<ProductEntity> search(Search search) {
+		String sql = "SELECT * FROM tbl_product p WHERE 1=1";
+		if (!StringUtils.isEmpty(search.getKeyword())) {
+			sql += " and (p.title like '%" + search.getKeyword() + "%')";
+		}
+		return executeNativeSql(sql);
 	}
 }

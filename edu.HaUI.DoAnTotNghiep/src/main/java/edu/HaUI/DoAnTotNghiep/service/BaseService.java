@@ -12,6 +12,8 @@ import javax.transaction.Transactional;
 import edu.HaUI.DoAnTotNghiep.entity.BaseEntity;
 
 public abstract class BaseService<E extends BaseEntity> {
+	
+	private static int SIZE_OF_PAGE = 10;
 
 	@PersistenceContext
 	EntityManager entityManager;

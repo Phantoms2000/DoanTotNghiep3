@@ -32,36 +32,48 @@
 			<main>
 				<div class="container">
 					<h1>Danh sách sản phẩm</h1>
-					<a href="/admin/addproduct" class="btn btn-dark">Thêm sản phẩm</a>
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th scope="col">Number</th>
-								<th scope="col">Title</th>
-								<th scope="col">Price</th>
-								<th scope="col">Category</th>
-								<th scope="col">Avatar</th>
-								<th scope="col">Action</th>
-								<!-- <th scope="col">Action</th> -->
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${products}" var="product" varStatus="loop">
+					<form action="${base }/admin/product" method="get">
+						<div class="d-flex justify-content-between">
+							<div>
+								<a href="/admin/addproduct" class="btn btn-dark">Thêm sản phẩm</a>
+							</div>
+							<div>
+								<input type="text" name="keyword" placeholder="Search..." />
+								<button type="submit">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</button>
+							</div>
+						</div>
+						<table class="table table-striped">
+							<thead>
 								<tr>
-									<th scope="row">${loop.index + 1}</th>
-									<td>${product.title}</td>
-									<td>${product.price}</td>
-									<td>${product.category.name}</td>
-									<td><img alt="" src="${base}/uploads/${product.avatar}"
-										width="100px" height="100px" /></td>
-									<td><a class="btn btn-primary"
-										href="${base}/admin/editproduct/${product.id}" role="button">Edit</a>
-										<button class="btn btn-danger" role="button"
-											onclick="DeleteProduct(${product.id})">Delete</button></td>
+									<th scope="col">Number</th>
+									<th scope="col">Title</th>
+									<th scope="col">Price</th>
+									<th scope="col">Category</th>
+									<th scope="col">Avatar</th>
+									<th scope="col">Action</th>
+									<!-- <th scope="col">Action</th> -->
 								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+								<c:forEach items="${products}" var="product" varStatus="loop">
+									<tr>
+										<th scope="row">${loop.index + 1}</th>
+										<td>${product.title}</td>
+										<td>${product.price}</td>
+										<td>${product.category.name}</td>
+										<td><img alt="" src="${base}/uploads/${product.avatar}"
+											width="100px" height="100px" /></td>
+										<td><a class="btn btn-primary"
+											href="${base}/admin/editproduct/${product.id}" role="button">Edit</a>
+											<button class="btn btn-danger" role="button"
+												onclick="DeleteProduct(${product.id})">Delete</button></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</form>
 				</div>
 			</main>
 			<!-- Footer -->

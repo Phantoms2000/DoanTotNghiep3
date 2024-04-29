@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import edu.HaUI.DoAnTotNghiep.dto.Search;
 import edu.HaUI.DoAnTotNghiep.entity.CategoryEntity;
 import edu.HaUI.DoAnTotNghiep.entity.ProductEntity;
 import edu.HaUI.DoAnTotNghiep.service.CategoryService;
@@ -33,7 +34,10 @@ public class AdminProductController {
 	@RequestMapping(value = { "/admin/product" }, method = RequestMethod.GET)
 	public String adminProduct(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws IOException {
-		model.addAttribute("products", productService.findAll());
+		String keyword = request.getParameter("keyword");
+		Search s = new Search();
+		s.setKeyword(keyword);
+		model.addAttribute("products", productService.search(s));
 		return "admin/product";
 	}
 
