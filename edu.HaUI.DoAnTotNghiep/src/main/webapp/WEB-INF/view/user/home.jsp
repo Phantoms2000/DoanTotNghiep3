@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,99 +126,19 @@
 		shop</h2>
 	<div class="container mt-3">
 		<div class="row">
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CayBachMaHoangTu.jpg"
-						class="card-img-top img-fluid" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Bạch Mã Hoàng Tử</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayBachMaHoangTu" class="btn btn-success">Xem
-							Thêm</a>
+			<c:forEach var="lp" items="${listproduct }">
+				<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12 mb-3">
+					<div class="card" style="width: 18rem;">
+						<img src="${base }/uploads/${lp.avatar}" height="285px"
+							class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">${lp.title }</h5>
+							<p class="card-text">Giá: ${lp.price } đồng</p>
+							<a href="${base }/chitietsanpham/${lp.id}" class="btn btn-success">Xem Thêm</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CayDuongXi2.jpg"
-						class="card-img-top img-fluid" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Dương Xỉ</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayDuongXi" class="btn btn-success">Xem Thêm</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CayHuongThao2.jpg" height="285px"
-						class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Hương Thảo</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayHuongThao" class="btn btn-success">Xem
-							Thêm</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CayKimTien.jpg"
-						class="card-img-top img-fluid" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Kim Tiền</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayKimTien" class="btn btn-success">Xem Thêm</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-3">
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/HoaXuongRong.jpg" height="285px"
-						class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Hoa Xương Rồng</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayXuongRong" class="btn btn-success">Xem
-							Thêm</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CayTrauBaDeVuong.jpg"
-						class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Trầu Bà Đế Vương</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayTrauBa" class="btn btn-success">Xem Thêm</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CayLuoiHo2.jpg" height="285px"
-						class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Lưỡi Hổ</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/cayLuoiHo" class="btn btn-success">Xem Thêm</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<div class="card" style="width: 18rem;">
-					<img src="${base }/user/images/CaySenDa2.jpg" height="285px"
-						class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">Cây Sen Đá</h5>
-						<p class="card-text">Giá: 70000 đồng</p>
-						<a href="${base }/hoaSenDa" class="btn btn-success">Xem Thêm</a>
-					</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 	<!-- Footer -->

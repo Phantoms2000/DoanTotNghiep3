@@ -1,0 +1,5 @@
+package edu.HaUI.DoAnTotNghiep.controller.admin;
+
+public abstract class BaseAdminController {
+
+}

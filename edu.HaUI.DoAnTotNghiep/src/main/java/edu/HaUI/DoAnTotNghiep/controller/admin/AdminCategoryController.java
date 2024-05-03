@@ -18,7 +18,7 @@ import edu.HaUI.DoAnTotNghiep.entity.CategoryEntity;
 import edu.HaUI.DoAnTotNghiep.service.CategoryService;
 
 @Controller
-public class AdminCategoryController {
+public class AdminCategoryController extends BaseAdminController {
 
 	@Autowired
 	private CategoryService categoryService;

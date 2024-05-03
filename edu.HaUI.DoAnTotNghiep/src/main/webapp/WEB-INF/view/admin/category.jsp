@@ -14,7 +14,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Static Navigation - SB Admin</title>
+<title>${AdminTitle }</title>
 <jsp:include page="/WEB-INF/view/common/variable.jsp"></jsp:include>
 <!-- CSS -->
 <jsp:include page="/WEB-INF/view/admin/layout/css.jsp"></jsp:include>

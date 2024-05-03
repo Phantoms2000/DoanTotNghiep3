@@ -1,0 +1,5 @@
+package edu.HaUI.DoAnTotNghiep.controller.user;
+
+public class BaseController {
+
+}

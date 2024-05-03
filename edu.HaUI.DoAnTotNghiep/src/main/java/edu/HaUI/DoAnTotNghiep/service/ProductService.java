@@ -88,6 +88,6 @@ public class ProductService extends BaseService<ProductEntity> implements Consta
 		if (!StringUtils.isEmpty(search.getKeyword())) {
 			sql += " and (p.title like '%" + search.getKeyword() + "%')";
 		}
-		return executeNativeSql(sql);
+		return executeNativeSql(sql, search.getPage());
 	}
 }

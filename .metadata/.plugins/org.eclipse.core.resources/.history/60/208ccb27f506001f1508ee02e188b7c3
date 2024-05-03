@@ -1,0 +1,15 @@
+package edu.HaUI.DoAnTotNghiep.controller.user;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class BaseController {
+	
+	public int getCurrentPage(HttpServletRequest request) {
+		try {
+			return Integer.parseInt(request.getParameter("page"));
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+
+}

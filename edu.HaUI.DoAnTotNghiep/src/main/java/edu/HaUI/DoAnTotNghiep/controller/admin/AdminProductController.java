@@ -23,7 +23,7 @@ import edu.HaUI.DoAnTotNghiep.service.CategoryService;
 import edu.HaUI.DoAnTotNghiep.service.ProductService;
 
 @Controller
-public class AdminProductController {
+public class AdminProductController extends BaseAdminController {
 
 	@Autowired
 	private CategoryService categoryService;
@@ -37,6 +37,7 @@ public class AdminProductController {
 		String keyword = request.getParameter("keyword");
 		Search s = new Search();
 		s.setKeyword(keyword);
+		s.setPage(getCurrentPage(request));
 		model.addAttribute("products", productService.search(s));
 		return "admin/product";
 	}

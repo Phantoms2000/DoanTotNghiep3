@@ -1,0 +1,15 @@
+package edu.HaUI.DoAnTotNghiep.controller.admin;
+
+import javax.servlet.http.HttpServletRequest;
+
+public abstract class BaseAdminController {
+	
+	public int getCurrentPage(HttpServletRequest request) {
+		try {
+			return Integer.parseInt(request.getParameter("page")) - 1;
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+
+}

@@ -14,7 +14,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Static Navigation - SB Admin</title>
+<title>${AdminTitle }</title>
 <jsp:include page="/WEB-INF/view/common/variable.jsp"></jsp:include>
 <!-- CSS -->
 <jsp:include page="/WEB-INF/view/admin/layout/css.jsp"></jsp:include>
@@ -39,8 +39,8 @@
 							</div>
 							<div>
 								<input type="text" name="keyword" placeholder="Search..." />
-								<button type="submit">
-									<i class="fa-solid fa-magnifying-glass"></i>
+								<button class="btn btn-dark" type="submit">
+									<i class="fa-solid fa-magnifying-glass text-light"></i>
 								</button>
 							</div>
 						</div>

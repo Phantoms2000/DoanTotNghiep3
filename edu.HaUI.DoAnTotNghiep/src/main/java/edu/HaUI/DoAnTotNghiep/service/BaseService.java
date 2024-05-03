@@ -12,8 +12,8 @@ import javax.transaction.Transactional;
 import edu.HaUI.DoAnTotNghiep.entity.BaseEntity;
 
 public abstract class BaseService<E extends BaseEntity> {
-	
-	private static int SIZE_OF_PAGE = 10;
+
+	private static int SIZE_OF_PAGE = 1;
 
 	@PersistenceContext
 	EntityManager entityManager;
@@ -50,9 +50,15 @@ public abstract class BaseService<E extends BaseEntity> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<E> executeNativeSql(String sql) {
+	public List<E> executeNativeSql(String sql, int page) {
 		try {
 			Query query = entityManager.createNativeQuery(sql, clazz());
+
+			if(page >= 0) {
+				query.setFirstResult(page * SIZE_OF_PAGE);
+				query.setMaxResults(SIZE_OF_PAGE);
+			}
+
 			return query.getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();

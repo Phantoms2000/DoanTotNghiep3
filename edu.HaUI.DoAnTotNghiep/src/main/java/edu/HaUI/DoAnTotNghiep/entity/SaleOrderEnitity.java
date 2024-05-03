@@ -20,7 +20,7 @@ public class SaleOrderEnitity extends BaseEntity {
 	@Column(name = "code", length = 45, nullable = false)
 	private String code;
 
-	@Column(name = "total", precision = 13, scale = 2, nullable = false)
+	@Column(name = "total", precision = 13, scale = 2, nullable = true)
 	private BigDecimal total;
 
 	@Column(name = "customer_name", length = 100, nullable = true)

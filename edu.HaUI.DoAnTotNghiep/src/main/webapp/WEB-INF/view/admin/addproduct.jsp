@@ -15,7 +15,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Static Navigation - SB Admin</title>
+<title>${AdminTitle }</title>
 <jsp:include page="/WEB-INF/view/common/variable.jsp"></jsp:include>
 <!-- CSS -->
 <jsp:include page="/WEB-INF/view/admin/layout/css.jsp"></jsp:include>
@@ -38,38 +38,38 @@
 							modelAttribute="product" enctype="multipart/form-data">
 							<sf:hidden path="id" />
 							<div class="form-group">
-								<label for="category">Category (Required)</label>
+								<label for="category">Category</label>
 								<sf:select path="category.id" class="form-control" id="category">
 									<sf:options items="${category }" itemValue="id"
 										itemLabel="name" />
 								</sf:select>
 							</div>
 							<div class="form-group">
-								<label for="title">Title (Required)</label>
+								<label for="title">Title</label>
 								<sf:input path="title" autocomplete="off" type="text"
 									class="form-control" id="title" placeholder="Title"
 									required="required"></sf:input>
 							</div>
 							<div class="form-group">
-								<label for="price">Price (Required)</label>
+								<label for="price">Price</label>
 								<sf:input path="price" autocomplete="off" type="number"
 									class="form-control" id="price" placeholder="Price"
 									required="required"></sf:input>
 							</div>
 							<div class="form-group">
-								<label for="priceSale">Price Sale (Required)</label>
+								<label for="priceSale">Price Sale</label>
 								<sf:input path="priceSale" autocomplete="off" type="number"
 									class="form-control" id="priceSale" placeholder="Price Sale"
 									required="required"></sf:input>
 							</div>
 							<div class="form-group">
-								<label for="short_description">Description (Required)</label>
+								<label for="short_description">Description</label>
 								<sf:textarea path="shortDescription" autocomplete="off"
 									class="form-control" placeholder="Short Description"
 									id="shortDescription" rows="3" required="required"></sf:textarea>
 							</div>
 							<div class="form-group">
-								<label for="detail_description">Detail (Required)</label>
+								<label for="detail_description">Detail</label>
 								<sf:textarea path="detailDescription" autocomplete="off"
 									class="form-control" placeholder="Detail Description"
 									id="detailDescription" rows="3" required="required"></sf:textarea>
@@ -79,12 +79,12 @@
 								<label class="form-check-label" for="isHot">Is hot?</label>
 							</div>
 							<div class="form-group">
-								<label for="fileProductAvatar">Avatar (Required)</label> <input
+								<label for="fileProductAvatar">Avatar</label> <input
 									id="fileProductAvatar" name="productAvatar" type="file"
 									class="form-control-file">
 							</div>
 							<div class="form-group">
-								<label for="fileProductPictures">Products (Multiple)</label> <input
+								<label for="fileProductPictures">Products</label> <input
 									id="fileProductPictures" name="productPictures" type="file"
 									class="form-control-file" multiple="multiple">
 							</div>
