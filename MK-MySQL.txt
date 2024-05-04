@@ -1,3 +1,7 @@
 "Import file Database.sql"
 username: root;
 password: 123456789;
+
+Mật khẩu đăng nhập vào trang admin:
+Username: admin
+Password: admin
