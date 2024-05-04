@@ -12,9 +12,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+
 @Entity
 @Table(name = "tbl_role")
-public class RoleEntity extends BaseEntity {
+public class RoleEntity extends BaseEntity implements GrantedAuthority {
+	private static final long serialVersionUID = 3333644526595662673L;
 
 	@Column(name = "name", length = 45, nullable = false)
 	private String name;
@@ -58,6 +61,11 @@ public class RoleEntity extends BaseEntity {
 	public void deleteUser(UserEntity user) {
 		user.getRoles().remove(this);
 		users.remove(user);
+	}
+
+	@Override
+	public String getAuthority() {
+		return name;
 	}
 
 }

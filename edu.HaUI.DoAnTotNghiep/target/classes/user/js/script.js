@@ -10,16 +10,3 @@ function sendMessage() {
         alert("Gửi thành công!");
     }
 }
-
-function Notification() {
-	var customerName = document.getElementById('CustomerName').value;
-	var customerAddress = document.getElementById('CustomerAddress').value;
-	var customerPhone = document.getElementById('CustomerPhone').value;
-	var customerEmail = document.getElementById('CustomerEmail').value;
-	if (customerName == "" || customerAddress == "" || customerPhone == "" || customerEmail == "") {
-		alert("Bạn phải nhập đầy đủ thông tin");
-	} else {
-		alert("Mua hàng thành công");
-		alert("Hàng sẽ được vận chuyển đến sau vài ngày");
-	}
-}

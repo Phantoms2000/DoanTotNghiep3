@@ -267,14 +267,14 @@ CREATE TABLE `tbl_user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `email` varchar(45) COLLATE utf8mb4_bin NOT NULL,
+  `email` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   `created_by` int DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL,
   `updated_by` int DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -283,6 +283,7 @@ CREATE TABLE `tbl_user` (
 
 LOCK TABLES `tbl_user` WRITE;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
+INSERT INTO `tbl_user` VALUES (11,'admin','$2a$04$RRT6.qZ9DFC/g7sTnXArtOHLa3kHzsjt44fYFingsha7Aq7clMD0i',NULL,NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -329,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-03 22:09:33
+-- Dump completed on 2024-05-04 20:23:18

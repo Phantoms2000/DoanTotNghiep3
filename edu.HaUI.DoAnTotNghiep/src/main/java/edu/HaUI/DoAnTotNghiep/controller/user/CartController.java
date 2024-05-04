@@ -58,7 +58,7 @@ public class CartController {
 				saleOrderProductEntity.setQuality(cartItem.getQuality());
 				saleOrderEnitity.addSaleOrderProducts(saleOrderProductEntity);
 			}
-			model.addAttribute("alert", "Mua hàng thành công");
+			model.addAttribute("alert", "Mua hàng thành công. Hàng sẽ được vận chuyển tới sau vài ngày.");
 			saleOrderService.saveOrUpdate(saleOrderEnitity);
 			session.setAttribute("cart", null);
 		}

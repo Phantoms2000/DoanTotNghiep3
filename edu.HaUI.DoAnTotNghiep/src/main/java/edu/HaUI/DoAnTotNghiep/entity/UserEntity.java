@@ -1,6 +1,7 @@
 package edu.HaUI.DoAnTotNghiep.entity;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,9 +14,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity
 @Table(name = "tbl_user")
-public class UserEntity extends BaseEntity {
+public class UserEntity extends BaseEntity implements UserDetails {
+	private static final long serialVersionUID = 1708887661431239762L;
 
 	@Column(name = "username", length = 45, nullable = false)
 	private String username;
@@ -23,7 +28,7 @@ public class UserEntity extends BaseEntity {
 	@Column(name = "password", length = 100, nullable = false)
 	private String password;
 
-	@Column(name = "email", length = 45, nullable = false)
+	@Column(name = "email", length = 45, nullable = true)
 	private String email;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
@@ -90,6 +95,31 @@ public class UserEntity extends BaseEntity {
 	public void deleteRole(RoleEntity role) {
 		role.getUsers().remove(this);
 		roles.remove(role);
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return roles;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 
 }
