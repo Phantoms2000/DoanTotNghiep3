@@ -23,7 +23,7 @@ import edu.HaUI.DoAnTotNghiep.service.CategoryService;
 import edu.HaUI.DoAnTotNghiep.service.ProductService;
 
 @Controller
-public class AdminProductController extends BaseAdminController {
+public class AdminProductController extends BaseController {
 
 	@Autowired
 	private CategoryService categoryService;
@@ -35,10 +35,16 @@ public class AdminProductController extends BaseAdminController {
 	public String adminProduct(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws IOException {
 		String keyword = request.getParameter("keyword");
+		int totalProduct = productService.findAll().size();
+		int totalPageProduct = totalProduct / productService.getSIZE_OF_PAGE();
+		if(totalProduct % productService.getSIZE_OF_PAGE() != 0) {
+			totalPageProduct++;
+		}
 		Search s = new Search();
 		s.setKeyword(keyword);
 		s.setPage(getCurrentPage(request));
 		model.addAttribute("products", productService.search(s));
+		model.addAttribute("totalPageProduct", totalPageProduct);
 		return "admin/product";
 	}
 

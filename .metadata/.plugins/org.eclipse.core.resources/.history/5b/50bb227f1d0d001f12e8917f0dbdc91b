@@ -1,0 +1,12 @@
+package edu.HaUI.DoAnTotNghiep.service;
+
+import edu.HaUI.DoAnTotNghiep.entity.ProductImageEntity;
+
+public class ProductImageService extends BaseService<ProductImageEntity> {
+	
+	@Override
+	protected Class<ProductImageEntity> clazz() {
+		return ProductImageEntity.class;
+	}
+
+}

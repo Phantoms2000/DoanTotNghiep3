@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.HaUI.DoAnTotNghiep.dto.Search;
 import edu.HaUI.DoAnTotNghiep.entity.CategoryEntity;
 import edu.HaUI.DoAnTotNghiep.service.CategoryService;
 
 @Controller
-public class AdminCategoryController extends BaseAdminController {
+public class AdminCategoryController extends BaseController {
 
 	@Autowired
 	private CategoryService categoryService;
@@ -26,8 +27,17 @@ public class AdminCategoryController extends BaseAdminController {
 	@RequestMapping(value = { "/admin/category" }, method = RequestMethod.GET)
 	public String adminCategory(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws IOException {
-		List<CategoryEntity> categories = categoryService.findAll();
-		model.addAttribute("category", categories);
+		String keyword = request.getParameter("keyword");
+		int totalCategory = categoryService.findAll().size();
+		int totalPageCategory = totalCategory / categoryService.getSIZE_OF_PAGE();
+		if(totalCategory % categoryService.getSIZE_OF_PAGE() != 0) {
+			totalPageCategory++;
+		}
+		Search s = new Search();
+		s.setKeyword(keyword);
+		s.setPage(getCurrentPage(request));
+		model.addAttribute("category", categoryService.search(s));
+		model.addAttribute("totalPageCategory", totalPageCategory);
 		return "admin/category";
 	}
 

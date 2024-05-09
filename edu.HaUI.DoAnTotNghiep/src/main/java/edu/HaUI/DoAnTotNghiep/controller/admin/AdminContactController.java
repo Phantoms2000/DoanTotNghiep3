@@ -16,7 +16,7 @@ import edu.HaUI.DoAnTotNghiep.entity.ContactEntity;
 import edu.HaUI.DoAnTotNghiep.service.ContactService;
 
 @Controller
-public class AdminContactController extends BaseAdminController {
+public class AdminContactController extends BaseController {
 
 	@Autowired
 	ContactService contactService;

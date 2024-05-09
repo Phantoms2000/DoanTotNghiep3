@@ -39,8 +39,8 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${base }/contact">Liên hệ</a></li>
 				</ul>
-				<form action="#" class="d-flex search-bar">
-					<input placeholder="Search...">
+				<form action="${base }/home" class="d-flex search-bar" method="get">
+					<input name="keyword" placeholder="Search...">
 					<button type="submit">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>

@@ -1,9 +1,13 @@
 package edu.HaUI.DoAnTotNghiep.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import edu.HaUI.DoAnTotNghiep.dto.Search;
 import edu.HaUI.DoAnTotNghiep.entity.CategoryEntity;
 
 @Service
@@ -22,6 +26,14 @@ public class CategoryService extends BaseService<CategoryEntity> {
 	@Transactional
 	public CategoryEntity edit(CategoryEntity categoryEntity) {
 		return super.saveOrUpdate(categoryEntity);
+	}
+
+	public List<CategoryEntity> search(Search search) {
+		String sql = "SELECT * FROM tbl_category c WHERE 1=1";
+		if (!StringUtils.isEmpty(search.getKeyword())) {
+			sql += " and (c.name like '%" + search.getKeyword() + "%')";
+		}
+		return executeNativeSql(sql, search.getPage());
 	}
 
 }

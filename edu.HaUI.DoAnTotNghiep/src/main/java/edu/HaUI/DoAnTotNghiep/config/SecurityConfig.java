@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/user/**", "/admin/**", "/uploads/**")
 		.permitAll()
-		.antMatchers("/admin/**").authenticated()
+		.antMatchers("/admin/**").hasAuthority("ADMIN")
 		.and()
 		.formLogin().loginPage("/login").loginProcessingUrl("/perform_login").defaultSuccessUrl("/admin/home", true)
 		.failureUrl("/login?login_error=true").permitAll()

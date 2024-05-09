@@ -35,7 +35,8 @@
 					<form action="${base }/admin/product" method="get">
 						<div class="d-flex justify-content-between">
 							<div>
-								<a href="/admin/addproduct" class="btn btn-dark">Thêm sản phẩm</a>
+								<a href="/admin/addproduct" class="btn btn-dark">Thêm sản
+									phẩm</a>
 							</div>
 							<div>
 								<input type="text" name="keyword" placeholder="Search..." />
@@ -67,13 +68,26 @@
 											width="100px" height="100px" /></td>
 										<td><a class="btn btn-primary"
 											href="${base}/admin/editproduct/${product.id}" role="button">Edit</a>
-											<button class="btn btn-danger" role="button"
-												onclick="DeleteProduct(${product.id})">Delete</button></td>
+											<button class="btn btn-danger" role="button">Delete</button></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 					</form>
+				</div>
+				<div class="d-flex justify-content-center">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination">
+							<li class="page-item"><a class="page-link"
+								href="/admin/product?page=${1 }">First</a></li>
+							<c:forEach begin="1" end="${totalPageProduct }" var="i">
+								<li class="page-item"><a class="page-link"
+									href="/admin/product?page=${i }">${i }</a></li>
+							</c:forEach>
+							<li class="page-item"><a class="page-link"
+								href="/admin/product?page=${totalPageProduct }">Last</a></li>
+						</ul>
+					</nav>
 				</div>
 			</main>
 			<!-- Footer -->

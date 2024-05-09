@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.HaUI.DoAnTotNghiep.controller.admin.BaseController;
 import edu.HaUI.DoAnTotNghiep.dto.Contact;
 import edu.HaUI.DoAnTotNghiep.entity.ContactEntity;
 import edu.HaUI.DoAnTotNghiep.service.ContactService;
 
 @Controller
-public class ContactController {
+public class ContactController extends BaseController {
 
 	@Autowired
 	ContactService contactService;

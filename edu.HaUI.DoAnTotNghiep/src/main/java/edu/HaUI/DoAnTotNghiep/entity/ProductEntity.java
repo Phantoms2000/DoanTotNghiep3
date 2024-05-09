@@ -31,8 +31,24 @@ public class ProductEntity extends BaseEntity {
 	private String shortDescription;
 
 	@Lob
-	@Column(name = "detail_description", columnDefinition = "LONGTEXT", nullable = false)
-	private String detailDescription;
+	@Column(name = "dacdiem", columnDefinition = "LONGTEXT", nullable = false)
+	private String dacdiem;
+
+	@Lob
+	@Column(name = "ynghia", columnDefinition = "LONGTEXT", nullable = false)
+	private String ynghia;
+
+	@Lob
+	@Column(name = "tacdung", columnDefinition = "LONGTEXT", nullable = false)
+	private String tacdung;
+
+	@Lob
+	@Column(name = "cachtrong", columnDefinition = "LONGTEXT", nullable = false)
+	private String cachtrong;
+
+	@Lob
+	@Column(name = "cachchamsoc", columnDefinition = "LONGTEXT", nullable = false)
+	private String cachchamsoc;
 
 	@Column(name = "avatar", length = 200, nullable = true)
 	private String avatar;
@@ -46,12 +62,12 @@ public class ProductEntity extends BaseEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
 	private CategoryEntity category;
-	
+
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
 	private Set<ProductImageEntity> listProductImages = new HashSet<ProductImageEntity>();
-	
+
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product2")
-    private Set<SaleOrderProductEntity> listSaleOrderProduct = new HashSet<SaleOrderProductEntity>();
+	private Set<SaleOrderProductEntity> listSaleOrderProduct = new HashSet<SaleOrderProductEntity>();
 
 	public String getTitle() {
 		return title;
@@ -85,12 +101,44 @@ public class ProductEntity extends BaseEntity {
 		this.shortDescription = shortDescription;
 	}
 
-	public String getDetailDescription() {
-		return detailDescription;
+	public String getDacdiem() {
+		return dacdiem;
 	}
 
-	public void setDetailDescription(String detailDescription) {
-		this.detailDescription = detailDescription;
+	public void setDacdiem(String dacdiem) {
+		this.dacdiem = dacdiem;
+	}
+
+	public String getYnghia() {
+		return ynghia;
+	}
+
+	public void setYnghia(String ynghia) {
+		this.ynghia = ynghia;
+	}
+
+	public String getTacdung() {
+		return tacdung;
+	}
+
+	public void setTacdung(String tacdung) {
+		this.tacdung = tacdung;
+	}
+
+	public String getCachtrong() {
+		return cachtrong;
+	}
+
+	public void setCachtrong(String cachtrong) {
+		this.cachtrong = cachtrong;
+	}
+
+	public String getCachchamsoc() {
+		return cachchamsoc;
+	}
+
+	public void setCachchamsoc(String cachchamsoc) {
+		this.cachchamsoc = cachchamsoc;
 	}
 
 	public String getAvatar() {
@@ -124,25 +172,41 @@ public class ProductEntity extends BaseEntity {
 	public void setCategory(CategoryEntity category) {
 		this.category = category;
 	}
-	
+
+	public Set<ProductImageEntity> getListProductImages() {
+		return listProductImages;
+	}
+
+	public void setListProductImages(Set<ProductImageEntity> listProductImages) {
+		this.listProductImages = listProductImages;
+	}
+
+	public Set<SaleOrderProductEntity> getListSaleOrderProduct() {
+		return listSaleOrderProduct;
+	}
+
+	public void setListSaleOrderProduct(Set<SaleOrderProductEntity> listSaleOrderProduct) {
+		this.listSaleOrderProduct = listSaleOrderProduct;
+	}
+
 	public void addProductImages(ProductImageEntity productImage) {
-        listProductImages.add(productImage);
-        productImage.setProduct(this);
-    }
+		listProductImages.add(productImage);
+		productImage.setProduct(this);
+	}
 
-    public void deleteProductImages(ProductImageEntity productImage) {
-        listProductImages.remove(productImage);
-        productImage.setProduct(null);
-    }
-    
-    public void addSaleOrderProduct(SaleOrderProductEntity saleorderproduct) {
-        listSaleOrderProduct.add(saleorderproduct);
-        saleorderproduct.setProduct2(this);
-    }
+	public void deleteProductImages(ProductImageEntity productImage) {
+		listProductImages.remove(productImage);
+		productImage.setProduct(null);
+	}
 
-    public void deleteSaleOrderProduct(SaleOrderProductEntity saleorderproduct) {
-    	listSaleOrderProduct.remove(saleorderproduct);
-        saleorderproduct.setProduct2(this);
-    }
+	public void addSaleOrderProduct(SaleOrderProductEntity saleorderproduct) {
+		listSaleOrderProduct.add(saleorderproduct);
+		saleorderproduct.setProduct2(this);
+	}
+
+	public void deleteSaleOrderProduct(SaleOrderProductEntity saleorderproduct) {
+		listSaleOrderProduct.remove(saleorderproduct);
+		saleorderproduct.setProduct2(this);
+	}
 
 }

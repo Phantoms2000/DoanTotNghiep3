@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.HaUI.DoAnTotNghiep.controller.admin.BaseController;
 import edu.HaUI.DoAnTotNghiep.entity.ProductEntity;
 import edu.HaUI.DoAnTotNghiep.service.ProductService;
 
 @Controller
-public class ProductDetailsController {
+public class ProductDetailsController extends BaseController {
 
 	@Autowired
 	ProductService productService;

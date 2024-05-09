@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class AdminUserController extends BaseAdminController {
+public class AdminUserController extends BaseController {
 	
 	@RequestMapping(value = { "/admin/user" }, method = RequestMethod.GET)
 	public String adminHome(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)

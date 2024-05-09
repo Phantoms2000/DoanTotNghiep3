@@ -10,8 +10,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.HaUI.DoAnTotNghiep.controller.admin.BaseController;
+
 @Controller
-public class LoginController {
+public class LoginController extends BaseController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)

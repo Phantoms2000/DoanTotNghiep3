@@ -32,29 +32,55 @@
 			<main>
 				<div class="container">
 					<h1>Danh sách Category</h1>
-					<a href="${base }/admin/addcategory" class="btn btn-dark">Thêm
-						danh mục</a>
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Name</th>
-								<th scope="col">Description</th>
-								<th scope="col">Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="c" items="${category }">
+					<form action="${base }/admin/category" method="get">
+						<div class="d-flex justify-content-between">
+							<div>
+								<a href="${base }/admin/addcategory" class="btn btn-dark">Thêm
+									danh mục</a>
+							</div>
+							<div>
+								<input type="text" name="keyword" placeholder="Search..." />
+								<button class="btn btn-dark" type="submit">
+									<i class="fa-solid fa-magnifying-glass text-light"></i>
+								</button>
+							</div>
+						</div>
+						<table class="table">
+							<thead>
 								<tr>
-									<td>${c.name }</td>
-									<td>${c.description }</td>
-									<td><a class="btn btn-primary"
-										href="${base}/admin/editcategory/${c.id}" role="button">Edit</a>
-										<button class="btn btn-danger" role="button"
-											onclick="DeleteProduct()">Delete</button></td>
+									<th scope="col">Name</th>
+									<th scope="col">Description</th>
+									<th scope="col">Action</th>
 								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="c" items="${category }">
+									<tr>
+										<td>${c.name }</td>
+										<td>${c.description }</td>
+										<td><a class="btn btn-primary"
+											href="${base}/admin/editcategory/${c.id}" role="button">Edit</a>
+											<button class="btn btn-danger" role="button"
+												onclick="DeleteProduct()">Delete</button></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="d-flex justify-content-center">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination">
+							<li class="page-item"><a class="page-link"
+								href="/admin/category?page=${1 }">First</a></li>
+							<c:forEach begin="1" end="${totalPageCategory }" var="i">
+								<li class="page-item"><a class="page-link"
+									href="/admin/category?page=${i }">${i }</a></li>
 							</c:forEach>
-						</tbody>
-					</table>
+							<li class="page-item"><a class="page-link"
+								href="/admin/category?page=${totalPageCategory }">Last</a></li>
+						</ul>
+					</nav>
 				</div>
 			</main>
 			<!-- Footer -->

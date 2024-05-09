@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.dto.Contact"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.service.ContactService"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.ContactEntity"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.BaseEntity"/>
     <fullyQualifiedTypeName name="javax.persistence.Column"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.ProductImageEntity"/>
-    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.CategoryEntity"/>
     <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.dto.Search"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.controller.user.BaseController"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.controller.admin.BaseAdminController"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
@@ -30,7 +20,6 @@
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.service.SaleOrderService"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.SaleOrderEnitity"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.dto.CartItem"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.SaleOrderProductEntity"/>
@@ -46,18 +35,29 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.service.BaseService"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
     <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.service.UserService"/>
-    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.UserEntity"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
+    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.UserEntity"/>
+    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.controller.admin.BaseController"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.CategoryEntity"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.service.ProductImageService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.service.BaseService"/>
+    <fullyQualifiedTypeName name="edu.HaUI.DoAnTotNghiep.entity.ProductImageEntity"/>
 </qualifiedTypeNameHistroy>

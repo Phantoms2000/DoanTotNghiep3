@@ -1,0 +1,20 @@
+package edu.HaUI.DoAnTotNghiep.service;
+
+import javax.transaction.Transactional;
+
+import edu.HaUI.DoAnTotNghiep.entity.ProductImageEntity;
+
+public class ProductImageService extends BaseService<ProductImageEntity> {
+	
+	@Override
+	protected Class<ProductImageEntity> clazz() {
+		return ProductImageEntity.class;
+	}
+	
+	@Transactional
+	public void delete(ProductImageEntity productImageEntity) {
+		int id = productImageEntity.getId();
+		deleteById(id);
+	}
+
+}

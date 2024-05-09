@@ -1,9 +1,7 @@
 package edu.HaUI.DoAnTotNghiep.entity;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -35,7 +33,7 @@ public class UserEntity extends BaseEntity implements UserDetails {
 	private Set<SaleOrderEnitity> listSaleOrder = new HashSet<SaleOrderEnitity>();
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "users")
-	private List<RoleEntity> roles = new ArrayList<RoleEntity>();
+	private Set<RoleEntity> roles = new HashSet<RoleEntity>();
 
 	public String getUsername() {
 		return username;
@@ -69,11 +67,11 @@ public class UserEntity extends BaseEntity implements UserDetails {
 		this.listSaleOrder = listSaleOrder;
 	}
 
-	public List<RoleEntity> getRoles() {
+	public Set<RoleEntity> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<RoleEntity> roles) {
+	public void setRoles(Set<RoleEntity> roles) {
 		this.roles = roles;
 	}
 

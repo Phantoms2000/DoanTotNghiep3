@@ -36,7 +36,7 @@ CREATE TABLE `tbl_category` (
   PRIMARY KEY (`id`),
   KEY `fk_category_category_idx` (`parent_id`),
   CONSTRAINT `fk_category_category` FOREIGN KEY (`parent_id`) REFERENCES `tbl_category` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `tbl_category` (
 
 LOCK TABLES `tbl_category` WRITE;
 /*!40000 ALTER TABLE `tbl_category` DISABLE KEYS */;
-INSERT INTO `tbl_category` VALUES (1,'Cây Lưỡi Hổ','Cây Lưỡi Hổ Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(2,'Hoa Xương Rồng','Hoa Xương Rồng',NULL,NULL,NULL,NULL,1,NULL,NULL),(3,'Cây Bạch Mã Hoàng Tử','Cây Bạch Mã Hoàng Tử Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(4,'Cây Dương Xỉ','Cây Dương Xỉ Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(5,'Cây Hương Thảo','Cây Hương Thảo Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(6,'Cây Kim Tiền','Cây Kim Tiền Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(7,'Cây Trầu Bà Đế Vương','Cây Trầu Bà Đế Vương Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(8,'Cây Sen Đá','Cây Sen Đá Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL);
+INSERT INTO `tbl_category` VALUES (1,'Cây Lưỡi Hổ','Cây Lưỡi Hổ Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(2,'Hoa Xương Rồng','Hoa Xương Rồng',NULL,NULL,NULL,NULL,1,NULL,NULL),(3,'Cây Bạch Mã Hoàng Tử','Cây Bạch Mã Hoàng Tử Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(4,'Cây Dương Xỉ','Cây Dương Xỉ Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(5,'Cây Hương Thảo','Cây Hương Thảo Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(6,'Cây Kim Tiền','Cây Kim Tiền Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(7,'Cây Trầu Bà Đế Vương','Cây Trầu Bà Đế Vương Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(8,'Cây Sen Đá','Cây Sen Đá Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL),(9,'Cây Ngũ Gia Bì','Cây Ngũ Gia Bì Đẹp',NULL,NULL,NULL,NULL,1,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,7 @@ CREATE TABLE `tbl_product` (
   `price` decimal(13,2) NOT NULL,
   `price_sale` decimal(13,2) DEFAULT NULL,
   `short_description` varchar(3000) COLLATE utf8mb4_bin NOT NULL,
-  `detail_description` longtext COLLATE utf8mb4_bin NOT NULL,
+  `dacdiem` longtext COLLATE utf8mb4_bin NOT NULL,
   `avatar` varchar(200) COLLATE utf8mb4_bin DEFAULT NULL,
   `category_id` int NOT NULL,
   `is_hot` tinyint(1) DEFAULT NULL,
@@ -105,6 +105,10 @@ CREATE TABLE `tbl_product` (
   `updated_date` datetime DEFAULT NULL,
   `updated_by` int DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
+  `ynghia` longtext COLLATE utf8mb4_bin NOT NULL,
+  `tacdung` longtext COLLATE utf8mb4_bin NOT NULL,
+  `cachtrong` longtext COLLATE utf8mb4_bin NOT NULL,
+  `cachchamsoc` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category_idx` (`category_id`),
   CONSTRAINT `fk_product_category` FOREIGN KEY (`category_id`) REFERENCES `tbl_category` (`id`) ON DELETE CASCADE
@@ -117,7 +121,7 @@ CREATE TABLE `tbl_product` (
 
 LOCK TABLES `tbl_product` WRITE;
 /*!40000 ALTER TABLE `tbl_product` DISABLE KEYS */;
-INSERT INTO `tbl_product` VALUES (1,'Cây Lưỡi Hổ Để Bàn',50000.00,0.00,'Cây Lưỡi Hổ Để Bàn Đẹp','Cây Lưỡi Hổ Để Bàn Đẹp','product/avatar/CayLuoiHo2.jpg',1,1,NULL,NULL,NULL,NULL,NULL,1),(2,'Hoa Xương Rồng Đẹp',70000.00,0.00,'Hoa Xương Rồng Đẹp','Hoa Xương Rồng Đẹp','product/avatar/HoaXuongRong.jpg',2,1,NULL,NULL,NULL,NULL,NULL,1),(3,'Cây Bạch Mã Hoàng Tử',40000.00,0.00,'Cây Bạch Mã Hoàng Tử Đẹp','Cây Bạch Mã Hoàng Tử Đẹp','product/avatar/CayBachMaHoangTu.jpg',3,1,NULL,NULL,NULL,NULL,NULL,1),(4,'Cây Dương Xỉ',60000.00,0.00,'Cây Dương Xỉ Đẹp','Cây Dương Xỉ Đẹp','product/avatar/CayDuongXi2.jpg',4,1,NULL,NULL,NULL,NULL,NULL,1),(5,'Cây Hương Thảo',50000.00,0.00,'Cây Hương Thảo Đẹp','Cây Hương Thảo Đẹp','product/avatar/CayHuongThao2.jpg',5,1,NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `tbl_product` VALUES (1,'Cây Lưỡi Hổ Để Bàn',50000.00,0.00,'Cây Lưỡi Hổ Để Bàn Đẹp','Cây Lưỡi Hổ Để Bàn Đẹp','product/avatar/CayLuoiHo2.jpg',1,1,NULL,NULL,NULL,NULL,NULL,1,'','','',''),(2,'Hoa Xương Rồng Đẹp',70000.00,0.00,'Hoa Xương Rồng Đẹp','Hoa Xương Rồng Đẹp','product/avatar/HoaXuongRong.jpg',2,1,NULL,NULL,NULL,NULL,NULL,1,'','','',''),(3,'Cây Bạch Mã Hoàng Tử',40000.00,0.00,'Cây Bạch Mã Hoàng Tử Đẹp','Cây Bạch Mã Hoàng Tử Đẹp','product/avatar/CayBachMaHoangTu.jpg',3,1,NULL,NULL,NULL,NULL,NULL,1,'','','',''),(4,'Cây Dương Xỉ',60000.00,0.00,'Cây Dương Xỉ Đẹp','Cây Dương Xỉ Đẹp','product/avatar/CayDuongXi2.jpg',4,1,NULL,NULL,NULL,NULL,NULL,1,'','','',''),(5,'Cây Hương Thảo',50000.00,0.00,'Cây Hương Thảo Đẹp','Cây Hương Thảo Đẹp','product/avatar/CayHuongThao2.jpg',5,1,NULL,NULL,NULL,NULL,NULL,1,'','','','');
 /*!40000 ALTER TABLE `tbl_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +145,7 @@ CREATE TABLE `tbl_product_image` (
   PRIMARY KEY (`id`),
   KEY `fk_product_image_product_idx` (`product_id`),
   CONSTRAINT `fk_product_image_product` FOREIGN KEY (`product_id`) REFERENCES `tbl_product` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +175,7 @@ CREATE TABLE `tbl_role` (
   `updated_by` int DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,6 +184,7 @@ CREATE TABLE `tbl_role` (
 
 LOCK TABLES `tbl_role` WRITE;
 /*!40000 ALTER TABLE `tbl_role` DISABLE KEYS */;
+INSERT INTO `tbl_role` VALUES (11,'ADMIN','ADMIN',NULL,NULL,NULL,NULL,NULL),(12,'GUEST','GUEST',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -274,7 +279,7 @@ CREATE TABLE `tbl_user` (
   `updated_by` int DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -283,7 +288,7 @@ CREATE TABLE `tbl_user` (
 
 LOCK TABLES `tbl_user` WRITE;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` VALUES (11,'admin','$2a$04$RRT6.qZ9DFC/g7sTnXArtOHLa3kHzsjt44fYFingsha7Aq7clMD0i',NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `tbl_user` VALUES (11,'admin','$2a$04$RRT6.qZ9DFC/g7sTnXArtOHLa3kHzsjt44fYFingsha7Aq7clMD0i','admin@gmail.com',NULL,NULL,NULL,NULL,1),(12,'guest','$2a$04$0psUUD1DY6c1fKZDYSl4fO30XPx/pVmELORRsMBh.QMAWjhU/L85K','guest@gmail.com',NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -310,12 +315,9 @@ CREATE TABLE `tbl_user_role` (
 
 LOCK TABLES `tbl_user_role` WRITE;
 /*!40000 ALTER TABLE `tbl_user_role` DISABLE KEYS */;
+INSERT INTO `tbl_user_role` VALUES (11,11),(12,12);
 /*!40000 ALTER TABLE `tbl_user_role` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'caycanhshopdb'
---
 
 --
 -- Dumping routines for database 'caycanhshopdb'
@@ -330,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-04 20:23:18
+-- Dump completed on 2024-05-09 15:56:21

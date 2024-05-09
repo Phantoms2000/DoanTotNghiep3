@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.HaUI.DoAnTotNghiep.controller.admin.BaseController;
 import edu.HaUI.DoAnTotNghiep.dto.Cart;
 import edu.HaUI.DoAnTotNghiep.dto.CartItem;
 import edu.HaUI.DoAnTotNghiep.entity.ProductEntity;
@@ -27,7 +28,7 @@ import edu.HaUI.DoAnTotNghiep.service.ProductService;
 import edu.HaUI.DoAnTotNghiep.service.SaleOrderService;
 
 @Controller
-public class CartController {
+public class CartController extends BaseController {
 
 	@Autowired
 	ProductService productService;
