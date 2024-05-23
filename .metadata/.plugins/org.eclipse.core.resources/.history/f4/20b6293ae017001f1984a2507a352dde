@@ -1,0 +1,29 @@
+package edu.HaUI.DoAnTotNghiep.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import edu.HaUI.DoAnTotNghiep.dto.Constants;
+import edu.HaUI.DoAnTotNghiep.dto.Search;
+import edu.HaUI.DoAnTotNghiep.entity.CategoryEntity;
+import edu.HaUI.DoAnTotNghiep.entity.SaleOrderEnitity;
+
+@Service
+public class SaleOrderService extends BaseService<SaleOrderEnitity> implements Constants {
+	
+	@Override
+	protected Class<SaleOrderEnitity> clazz() {
+		return SaleOrderEnitity.class;
+	}
+	
+	public List<CategoryEntity> search(Search search) {
+		String sql = "SELECT * FROM tbl_saleorder so WHERE 1=1";
+		if (!StringUtils.isEmpty(search.getKeyword())) {
+			sql += " and (so.customer_name like '%" + search.getKeyword() + "%')";
+		}
+		return executeNativeSql(sql, search.getPage());
+	}
+
+}

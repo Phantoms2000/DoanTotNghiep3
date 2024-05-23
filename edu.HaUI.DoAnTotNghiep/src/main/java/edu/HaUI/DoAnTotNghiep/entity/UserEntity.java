@@ -30,7 +30,7 @@ public class UserEntity extends BaseEntity implements UserDetails {
 	private String email;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-	private Set<SaleOrderEnitity> listSaleOrder = new HashSet<SaleOrderEnitity>();
+	private Set<SaleOrderEntity> listSaleOrder = new HashSet<SaleOrderEntity>();
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "users")
 	private Set<RoleEntity> roles = new HashSet<RoleEntity>();
@@ -59,11 +59,11 @@ public class UserEntity extends BaseEntity implements UserDetails {
 		this.email = email;
 	}
 
-	public Set<SaleOrderEnitity> getListSaleOrder() {
+	public Set<SaleOrderEntity> getListSaleOrder() {
 		return listSaleOrder;
 	}
 
-	public void setListSaleOrder(Set<SaleOrderEnitity> listSaleOrder) {
+	public void setListSaleOrder(Set<SaleOrderEntity> listSaleOrder) {
 		this.listSaleOrder = listSaleOrder;
 	}
 
@@ -75,12 +75,12 @@ public class UserEntity extends BaseEntity implements UserDetails {
 		this.roles = roles;
 	}
 
-	public void addSaleOrder(SaleOrderEnitity saleOrder) {
+	public void addSaleOrder(SaleOrderEntity saleOrder) {
 		listSaleOrder.add(saleOrder);
 		saleOrder.setUser(this);
 	}
 
-	public void deleteSaleOrderProducts(SaleOrderEnitity saleOrder) {
+	public void deleteSaleOrderProducts(SaleOrderEntity saleOrder) {
 		listSaleOrder.remove(saleOrder);
 		saleOrder.setUser(null);
 	}

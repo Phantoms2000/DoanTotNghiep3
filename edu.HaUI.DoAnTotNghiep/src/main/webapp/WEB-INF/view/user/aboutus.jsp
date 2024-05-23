@@ -25,7 +25,7 @@
 	<div class="container mt-3">
 		<div class="row">
 			<h4 class="text-success text-center fw-bolder">CayCanhShop là 1
-				website chuyên cung cấp cây văn phòng, mang không gian xanh tới cuộc
+				website chuyên cung cấp cây xanh, mang không gian xanh tới cuộc
 				sống của bạn</h4>
 		</div>
 	</div>
@@ -33,7 +33,7 @@
 		<div
 			class="row col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
 			<img src="${base }/user/images/CayCanhDep.jpg" alt=""
-				style="vertical-align: middle;">
+				style="vertical-align: middle;" width="500px;">
 		</div>
 	</div>
 	<div class="container mt-3">Nhằm quảng bá rộng rãi đến mọi đối

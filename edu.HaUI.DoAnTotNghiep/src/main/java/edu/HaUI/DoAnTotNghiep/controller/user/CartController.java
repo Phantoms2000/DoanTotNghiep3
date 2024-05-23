@@ -22,7 +22,7 @@ import edu.HaUI.DoAnTotNghiep.controller.admin.BaseController;
 import edu.HaUI.DoAnTotNghiep.dto.Cart;
 import edu.HaUI.DoAnTotNghiep.dto.CartItem;
 import edu.HaUI.DoAnTotNghiep.entity.ProductEntity;
-import edu.HaUI.DoAnTotNghiep.entity.SaleOrderEnitity;
+import edu.HaUI.DoAnTotNghiep.entity.SaleOrderEntity;
 import edu.HaUI.DoAnTotNghiep.entity.SaleOrderProductEntity;
 import edu.HaUI.DoAnTotNghiep.service.ProductService;
 import edu.HaUI.DoAnTotNghiep.service.SaleOrderService;
@@ -44,7 +44,7 @@ public class CartController extends BaseController {
 		String customerPhone = request.getParameter("customerPhone");
 		String customerEmail = request.getParameter("customerEmail");
 		if (!customerName.isEmpty() && !customerAddress.isEmpty() && !customerPhone.isEmpty() && !customerEmail.isEmpty()) {
-			SaleOrderEnitity saleOrderEnitity = new SaleOrderEnitity();
+			SaleOrderEntity saleOrderEnitity = new SaleOrderEntity();
 			saleOrderEnitity.setCustomerName(customerName);
 			saleOrderEnitity.setCustomerAddress(customerAddress);
 			saleOrderEnitity.setCustomerPhone(customerPhone);

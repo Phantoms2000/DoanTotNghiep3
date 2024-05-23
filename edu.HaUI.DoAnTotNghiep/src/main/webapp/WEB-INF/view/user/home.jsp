@@ -148,13 +148,13 @@
 			<div class="d-flex justify-content-center">
 				<nav aria-label="Page navigation example">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link"
+						<li class="page-item"><a class="page-link text-success"
 							href="/home?page=${1 }">First</a></li>
 						<c:forEach begin="1" end="${totalPageHome }" var="i">
-							<li class="page-item"><a class="page-link"
+							<li class="page-item"><a class="page-link text-success"
 								href="/home?page=${i }">${i }</a></li>
 						</c:forEach>
-						<li class="page-item"><a class="page-link"
+						<li class="page-item"><a class="page-link text-success"
 							href="/home?page=${totalPageHome }">Last</a></li>
 					</ul>
 				</nav>

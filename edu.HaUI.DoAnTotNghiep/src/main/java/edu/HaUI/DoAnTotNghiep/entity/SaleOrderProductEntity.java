@@ -17,7 +17,7 @@ public class SaleOrderProductEntity extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "saleorder_id")
-	private SaleOrderEnitity sale_order;
+	private SaleOrderEntity sale_order;
 
 	@Column(name = "quality", nullable = false)
 	private Integer quality;
@@ -38,11 +38,11 @@ public class SaleOrderProductEntity extends BaseEntity {
 		this.product2 = product2;
 	}
 
-	public SaleOrderEnitity getSale_order() {
+	public SaleOrderEntity getSale_order() {
 		return sale_order;
 	}
 
-	public void setSale_order(SaleOrderEnitity sale_order) {
+	public void setSale_order(SaleOrderEntity sale_order) {
 		this.sale_order = sale_order;
 	}
 

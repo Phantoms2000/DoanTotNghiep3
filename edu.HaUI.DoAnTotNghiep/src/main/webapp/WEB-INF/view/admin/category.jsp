@@ -48,17 +48,17 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th scope="col">Name</th>
-									<th scope="col">Description</th>
-									<th scope="col">Action</th>
+									<th scope="col" width="200px">Tên danh mục</th>
+									<th scope="col" width="800px">Mô tả</th>
+									<th scope="col" width="300px">Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="c" items="${category }">
 									<tr>
-										<td>${c.name }</td>
-										<td>${c.description }</td>
-										<td><a class="btn btn-primary"
+										<td width="200px">${c.name }</td>
+										<td width="800px">${c.description }</td>
+										<td width="300px"><a class="btn btn-primary"
 											href="${base}/admin/editcategory/${c.id}" role="button">Edit</a>
 											<button class="btn btn-danger" role="button"
 												onclick="DeleteProduct()">Delete</button></td>

@@ -37,7 +37,7 @@ public class AdminProductController extends BaseController {
 		String keyword = request.getParameter("keyword");
 		int totalProduct = productService.findAll().size();
 		int totalPageProduct = totalProduct / productService.getSIZE_OF_PAGE();
-		if(totalProduct % productService.getSIZE_OF_PAGE() != 0) {
+		if (totalProduct % productService.getSIZE_OF_PAGE() != 0) {
 			totalPageProduct++;
 		}
 		Search s = new Search();
@@ -82,6 +82,13 @@ public class AdminProductController extends BaseController {
 		model.addAttribute("category", categories);
 		model.addAttribute("product", product);
 		return "admin/addproduct";
+	}
+
+	@RequestMapping(value = { "/admin/deleteproduct/{productId}" }, method = RequestMethod.DELETE)
+	public String deleteProduct(final ModelMap model, final HttpServletRequest request,
+			final HttpServletResponse response, @PathVariable("productId") int productId) throws IOException {
+		productService.deleteById(productId);
+		return "admin/product";
 	}
 
 }

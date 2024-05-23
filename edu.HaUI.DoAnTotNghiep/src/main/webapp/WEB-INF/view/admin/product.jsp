@@ -48,11 +48,11 @@
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th scope="col">Number</th>
-									<th scope="col">Title</th>
-									<th scope="col">Price</th>
-									<th scope="col">Category</th>
-									<th scope="col">Avatar</th>
+									<th scope="col">STT</th>
+									<th scope="col">Tên sản phẩm</th>
+									<th scope="col">Giá</th>
+									<th scope="col">Loại cây</th>
+									<th scope="col">Ảnh</th>
 									<th scope="col">Action</th>
 									<!-- <th scope="col">Action</th> -->
 								</tr>

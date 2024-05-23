@@ -38,39 +38,63 @@
 							modelAttribute="product" enctype="multipart/form-data">
 							<sf:hidden path="id" />
 							<div class="form-group">
-								<label for="category">Category</label>
+								<label for="category">Loại cây</label>
 								<sf:select path="category.id" class="form-control" id="category">
 									<sf:options items="${category }" itemValue="id"
 										itemLabel="name" />
 								</sf:select>
 							</div>
 							<div class="form-group">
-								<label for="title">Title</label>
+								<label for="title">Tên cây</label>
 								<sf:input path="title" autocomplete="off" type="text"
 									class="form-control" id="title" placeholder="Title"
 									required="required"></sf:input>
 							</div>
 							<div class="form-group">
-								<label for="price">Price</label>
+								<label for="price">Giá</label>
 								<sf:input path="price" autocomplete="off" type="number"
 									class="form-control" id="price" placeholder="Price"
 									required="required"></sf:input>
 							</div>
 							<div class="form-group">
-								<label for="priceSale">Price Sale</label>
+								<label for="priceSale">Giảm giá</label>
 								<sf:input path="priceSale" autocomplete="off" type="number"
 									class="form-control" id="priceSale" placeholder="Price Sale"
 									required="required"></sf:input>
 							</div>
 							<div class="form-group">
-								<label for="short_description">Description</label>
+								<label for="short_description">Mô tả ngắn</label>
 								<sf:textarea path="shortDescription" autocomplete="off"
 									class="form-control" placeholder="Short Description"
 									id="shortDescription" rows="3" required="required"></sf:textarea>
 							</div>
 							<div class="form-group">
-								<label for="detail_description">Detail</label>
-								<sf:textarea path="detailDescription" autocomplete="off"
+								<label for="detail_description">Đặc điểm</label>
+								<sf:textarea path="dacdiem" autocomplete="off"
+									class="form-control" placeholder="Detail Description"
+									id="detailDescription" rows="3" required="required"></sf:textarea>
+							</div>
+							<div class="form-group">
+								<label for="detail_description">Ý nghĩa</label>
+								<sf:textarea path="ynghia" autocomplete="off"
+									class="form-control" placeholder="Detail Description"
+									id="detailDescription" rows="3" required="required"></sf:textarea>
+							</div>
+							<div class="form-group">
+								<label for="detail_description">Tác dụng</label>
+								<sf:textarea path="tacdung" autocomplete="off"
+									class="form-control" placeholder="Detail Description"
+									id="detailDescription" rows="3" required="required"></sf:textarea>
+							</div>
+							<div class="form-group">
+								<label for="detail_description">Cách trồng</label>
+								<sf:textarea path="cachtrong" autocomplete="off"
+									class="form-control" placeholder="Detail Description"
+									id="detailDescription" rows="3" required="required"></sf:textarea>
+							</div>
+							<div class="form-group">
+								<label for="detail_description">Cách chăm sóc</label>
+								<sf:textarea path="cachchamsoc" autocomplete="off"
 									class="form-control" placeholder="Detail Description"
 									id="detailDescription" rows="3" required="required"></sf:textarea>
 							</div>

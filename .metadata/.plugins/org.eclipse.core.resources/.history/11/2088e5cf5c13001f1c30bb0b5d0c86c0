@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+	
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h1 class="mt-4">Thêm tài khoản</h1>
+		<sf:form method="post" action="${base}/admin/adduser"
+			modelAttribute="adduser" enctype="multipart/form-data">
+			<sf:hidden path="id" />
+			<div class="form-group">
+				<label for="title">User Name</label>
+				<sf:input path="username" autocomplete="off" type="text"
+					class="form-control" id="name" placeholder="User Name"
+					required="required"></sf:input>
+			</div>
+			<div class="form-group">
+				<label for="price">Description</label>
+				<sf:input path="description" autocomplete="off" type="text"
+					class="form-control" id="description" placeholder="Description"
+					required="required"></sf:input>
+			</div>
+			<br />
+			<a href="${base }/admin/category" class="btn btn-dark active"
+				role="button" aria-pressed="true">Back To List</a>
+			<button type="submit" class="btn btn-primary">Save Category</button>
+		</sf:form>
+	</div>
+</body>
+</html>
