@@ -31,7 +31,7 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container">
-					<h1>Danh sách mua hàng</h1>
+					<h1>Danh sách đơn hàng</h1>
 					<form action="${base }/admin/user" method="get">
 						<div class="d-flex justify-content-between">
 							<div>
