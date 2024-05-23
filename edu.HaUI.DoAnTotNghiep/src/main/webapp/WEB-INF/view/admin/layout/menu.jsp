@@ -10,7 +10,7 @@
 				</a> <a class="nav-link" href="${base }/admin/product">
 				Quản lý sản phẩm
 				</a> <a class="nav-link" href="${base }/admin/user">
-				Xem danh sách người dùng
+				Xem danh sách tài khoản
 				</a> <a class="nav-link" href="${base }/admin/contact">
 				Xem danh sách liên hệ
 				</a> <a class="nav-link" href="${base }/admin/saleorder">
